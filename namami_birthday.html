@@ -1,0 +1,558 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Namami 🎀</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+:root {
+  --pink: #f5b8c9;
+  --cream: #fff9f3;
+  --brown: #755361;
+  --rose: #d87598;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  color: var(--brown);
+  background:
+    radial-gradient(circle at 15% 15%, #ffe2eb, transparent 35%),
+    radial-gradient(circle at 85% 80%, #f9dbe9, transparent 35%),
+    #fff8f5;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; }
+
+.sparkle {
+  position: fixed;
+  color: #e6a2ba;
+  pointer-events: none;
+  animation: float 5s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-18px) rotate(15deg); }
+}
+
+.top {
+  text-align: center;
+  padding: 20px 12px 0;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  width: min(720px, 94%);
+  margin: 18px auto 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.slide {
+  display: none;
+  min-height: 580px;
+  padding: 32px 22px;
+  text-align: center;
+  background: rgba(255,255,255,.72);
+  border: 1px solid white;
+  border-radius: 28px;
+  box-shadow: 0 18px 60px #b8799320;
+  animation: appear .6s ease;
+}
+
+.slide.active { display: flex; flex-direction: column;
+  align-items: center; justify-content: center; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-weight: 700;
+}
+
+h1, h2 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+h1 { font-size: clamp(45px, 9vw, 78px); margin: 14px 0; }
+h2 { font-size: clamp(32px, 6vw, 47px); margin: 12px 0; }
+
+.name {
+  color: #d87598;
+  font-style: italic;
+  text-shadow: 2px 3px 0 #fce1e9;
+}
+
+p {
+  max-width: 470px;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.bow { font-size: 48px; margin-bottom: 8px; }
+
+.pill {
+  border: 0;
+  border-radius: 30px;
+  background: #d87598;
+  color: white;
+  padding: 13px 23px;
+  font-weight: 700;
+  margin-top: 17px;
+  box-shadow: 0 6px 15px #d8759835;
+  transition: .2s;
+}
+
+.pill:hover { transform: translateY(-3px); }
+.pill.secondary {
+  background: #fff0f5;
+  color: #a45d79;
+  border: 1px solid #f5d2df;
+  box-shadow: none;
+}
+
+.small-note { font-size: 11px; color: #b18b9a; }
+
+/* PHOTO SLIDE */
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin: 20px 0 8px;
+}
+
+.polaroid {
+  background: white;
+  padding: 8px 8px 13px;
+  box-shadow: 0 5px 18px #85526818;
+  transform: rotate(-2deg);
+  border-radius: 3px;
+}
+
+.polaroid:nth-child(even) { transform: rotate(2deg); }
+
+
+.polaroid img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: #fff5f8;
+  display: block;
+  border-radius: 4px;
+}
+
+
+.polaroid span {
+  display: block;
+  margin-top: 10px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.gallery .polaroid:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: 65%;
+  justify-self: center;
+}
+
+.photo-tip {
+  font-size: 11px;
+  color: #b18b9a;
+}
+
+/* CAKE */
+.cake-area {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 12px 0 0;
+}
+
+.cake {
+  position: relative;
+  width: 190px;
+  height: 105px;
+  margin-top: 70px;
+  background: linear-gradient(#ffd8e5 0 25%, #ef9fbb 25% 100%);
+  border-radius: 15px 15px 22px 22px;
+  box-shadow: inset -10px 0 #df87a8;
+}
+
+.cake::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 37px;
+  top: -17px;
+  left: -10px;
+  border-radius: 50%;
+  background: #fff0f5;
+  border: 2px solid #f6bfd2;
+}
+
+.cake::after {
+  content: "♡  ♡  ♡";
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  text-align: center;
+  color: #fff8fa;
+  font-size: 22px;
+  letter-spacing: 5px;
+}
+
+.plate {
+  position: absolute;
+  width: 260px;
+  height: 22px;
+  background: #f7d5e1;
+  border-radius: 50%;
+  bottom: 20px;
+  box-shadow: 0 5px 0 #eab4ca;
+}
+
+.candle {
+  position: absolute;
+  width: 12px;
+  height: 57px;
+  background: repeating-linear-gradient(
+    45deg, #fff7f8, #fff7f8 5px, #f1a1bd 5px, #f1a1bd 10px
+  );
+  border-radius: 4px;
+  top: -67px;
+  z-index: 2;
+}
+
+.c1 { left: 38px; }
+.c2 { left: 88px; }
+.c3 { left: 138px; }
+
+.flame {
+  position: absolute;
+  top: -21px;
+  left: 1px;
+  width: 10px;
+  height: 17px;
+  background: #ffb84d;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 0 16px #ffb84d99;
+  animation: flicker .65s infinite alternate;
+}
+
+@keyframes flicker {
+  from { transform: rotate(-45deg) scale(1); }
+  to { transform: rotate(-38deg) scale(.83); }
+}
+
+.candle.out .flame { display: none; }
+
+.wish {
+  min-height: 32px;
+  color: #d87598;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* FINAL SLIDE */
+.letter {
+  margin: 18px 0;
+  padding: 25px 20px;
+  background: #fff5f8;
+  border: 1px dashed #e8aec3;
+  border-radius: 15px;
+  text-align: left;
+  line-height: 2;
+  font-size: 14px;
+  max-width: 490px;
+}
+
+.letter strong { color: #c5688d; }
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.navbtn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #f0cad8;
+  border-radius: 50%;
+  background: #fff;
+  color: #a45d79;
+  font-size: 19px;
+}
+
+.navbtn:disabled { opacity: .35; cursor: default; }
+
+.dots { display: flex; gap: 7px; }
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ebc8d5;
+}
+
+.dot.active { background: #d87598; width: 20px; border-radius: 10px; }
+
+footer {
+  text-align: center;
+  font-size: 11px;
+  color: #bd96a6;
+  padding: 0 10px 20px;
+}
+
+@media(max-width: 420px) {
+  .slide { min-height: 560px; padding: 25px 15px; }
+  .polaroid img { height: 125px; }
+  .cake-area { transform: scale(.9); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sparkle" style="top:12%;left:7%">✧</div>
+<div class="sparkle" style="top:30%;right:8%;animation-delay:1s">♡</div>
+<div class="sparkle" style="bottom:15%;left:9%;animation-delay:2s">✦</div>
+<div class="sparkle" style="top:65%;right:5%;animation-delay:.5s">✧</div>
+
+<div class="top">a little birthday magic · just for you</div>
+
+<main>
+
+  <!-- SLIDE 1 -->
+  <section class="slide active">
+    <div class="bow">🎀</div>
+    <div class="eyebrow">a very special day</div>
+    <h1>Happy Birthday<br><span class="name">Namami</span></h1>
+    <p>
+      Today, the world feels a little more beautiful
+      because it's the day someone as special as you was born.
+    </p>
+    <p style="font-size:25px">♡ ✧ ♡</p>
+    <button class="pill" onclick="goTo(1)">Open your little surprise →</button>
+    <p class="small-note">made with love, just for you</p>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide">
+    <div class="eyebrow">little moments, big memories</div>
+    <h2>Our little<br><span class="name">memory lane</span></h2>
+    <p>Some moments become memories. Some people become home. ♡</p>
+
+    <div class="gallery">
+      <div class="polaroid">
+        <img src="photo1.jpg.jpeg" alt="Our memory one">
+        <span>my favourite memory ♡</span>
+      </div>
+      <div class="polaroid">
+        <img src="photo2.jpg.jpeg" alt="Our memory two">
+        <span>pretty little moments ✿</span>
+      </div>
+      <div class="polaroid">
+        <img src="photo3.jpg.jpeg" alt="Our memory three">
+        <span>forever in my camera roll</span>
+      </div>
+      <div class="polaroid">
+        <img src="photo4.jpg.jpeg" alt="Our memory four">
+        <span>you + me = good memories</span>
+      </div>
+    </div>
+
+    <p class="photo-tip">♡ our memories, kept in little frames ♡</p>
+    <button class="pill" onclick="goTo(2)">Time for cake! →</button>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide">
+    <div class="eyebrow">make a little wish</div>
+    <h2>A cake for<br><span class="name">the birthday girl</span></h2>
+    <p>Close your eyes, make a wish, and let the magic begin. ✨</p>
+
+    <div class="cake-area">
+      <div class="plate"></div>
+      <div class="cake">
+        <div class="candle c1"><div class="flame"></div></div>
+        <div class="candle c2"><div class="flame"></div></div>
+        <div class="candle c3"><div class="flame"></div></div>
+      </div>
+    </div>
+
+    <div class="wish" id="wish">Three candles, a thousand wishes ♡</div>
+    <button class="pill" id="blowBtn" onclick="blowCandles()">Blow the candles ✨</button>
+    <button class="pill secondary" id="relightBtn" onclick="relightCandles()" style="display:none">
+      Light them again 🕯️
+    </button>
+    <button class="pill secondary" onclick="goTo(3)">One last surprise →</button>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide">
+    <div class="bow">💌</div>
+    <div class="eyebrow">a little letter for you</div>
+    <h2>Dear <span class="name">Namami</span>,</h2>
+
+    <div class="letter">
+      Happy Birthday, <strong>beautiful soul!</strong> 🎂
+      <br><br>
+      I hope this new chapter brings you endless reasons
+      to smile, beautiful memories to keep, and little
+      moments that make your heart happy.
+      <br><br>
+      May you always find people who appreciate you,
+      dreams that excite you, and happiness in the
+      smallest things.
+      <br><br>
+      Thank you for being the lovely person you are.
+      Keep shining, keep laughing, and never stop being
+      your wonderful self.
+      <br><br>
+      <strong>Lots of love, hugs & birthday magic! ♡</strong>
+    </div>
+
+    <h2 style="font-size:30px">Stay magical, always ✨</h2>
+    <p>Made especially for you, Namami. 🎀</p>
+    <button class="pill" onclick="restart()">Replay our little story ↻</button>
+  </section>
+
+  <div class="navigation">
+    <button class="navbtn" id="prev" onclick="changeSlide(-1)" aria-label="Previous slide">←</button>
+    <div class="dots" id="dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <button class="navbtn" id="next" onclick="changeSlide(1)" aria-label="Next slide">→</button>
+  </div>
+
+</main>
+
+<footer>designed with ♡ · a tiny corner of happiness for Namami</footer>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let current = 0;
+let candlesBlown = false;
+
+function goTo(index) {
+  current = index;
+  showSlide();
+}
+
+function changeSlide(direction) {
+  current = Math.max(0, Math.min(slides.length - 1, current + direction));
+  showSlide();
+}
+
+function showSlide() {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === current);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === current);
+  });
+
+  document.getElementById('prev').disabled = current === 0;
+  document.getElementById('next').disabled = current === slides.length - 1;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function blowCandles() {
+  if (candlesBlown) return;
+
+  document.querySelectorAll('.candle').forEach(candle => {
+    candle.classList.add('out');
+  });
+
+  candlesBlown = true;
+  document.getElementById('wish').textContent =
+    'Your wish is on its way to the universe! 💖✨';
+
+  document.getElementById('blowBtn').style.display = 'none';
+  document.getElementById('relightBtn').style.display = 'inline-block';
+
+  // Floating birthday confetti
+  const emojis = ['💗', '✨', '🎀', '💕', '🌸', '♡'];
+
+  for (let i = 0; i < 32; i++) {
+    const piece = document.createElement('span');
+    piece.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    piece.style.cssText = `
+      position:fixed;
+      left:${Math.random() * 100}vw;
+      top:-30px;
+      z-index:99;
+      pointer-events:none;
+      font-size:${16 + Math.random() * 18}px;
+      transition:top 2.5s ease-in,transform 2.5s ease-in;
+    `;
+    document.body.appendChild(piece);
+
+    requestAnimationFrame(() => {
+      piece.style.top = '105vh';
+      piece.style.transform = `rotate(${Math.random() * 500}deg)`;
+    });
+
+    setTimeout(() => piece.remove(), 2800);
+  }
+}
+
+function relightCandles() {
+  document.querySelectorAll('.candle').forEach(candle => {
+    candle.classList.remove('out');
+  });
+
+  candlesBlown = false;
+  document.getElementById('wish').textContent =
+    'Three candles, a thousand wishes ♡';
+
+  document.getElementById('blowBtn').style.display = 'inline-block';
+  document.getElementById('relightBtn').style.display = 'none';
+}
+
+function restart() {
+  relightCandles();
+  goTo(0);
+}
+
+showSlide();
+</script>
+
+</body>
+</html>
